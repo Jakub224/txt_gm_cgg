@@ -6,6 +6,7 @@ using namespace std;
 string inpt;
 string cmds [20] = {" ","north", "south", "west", "east", "exit"};
 int position [2] = {0,0};
+int size_cmds;
 int cmd_no;
 int i;
 
@@ -35,6 +36,7 @@ void exit_end() {
 exit(0);
 }
 
+//main functions
 int main()
 {
 
@@ -42,12 +44,21 @@ int main()
     cout << endl << "      Introduction   " << endl;
     cout << endl << "----------------------------" << endl;
 
+size_cmds = sizeof(cmds)/sizeof(cmds[0]);
+
 while (1 < 2) {
 
     std::cout << "Where would you like to move? \n";
     std::cin  >> inpt;
 
-    for (i=1; i<6; i++) {
+if (inpt == "help") {
+        std::cout << "\n";
+    for (i=1; i<size_cmds; i++){
+        std::cout << cmds[i] << "\n";
+    }
+}
+
+    for (i=1; i<size_cmds; i++) {
         if (inpt == cmds[i] ){
             cmd_no = i;
         }
