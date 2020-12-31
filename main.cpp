@@ -4,9 +4,11 @@ using namespace std;
 
 //variables_arrays
 string inpt;
-string cmds [20] = {" ","north", "south", "west", "east", "exit"};
+string cmds [20] = {" ","north", "south", "west", "east", "exit","I"};
+string inventar[3] = {"Torch", "Candle", "Dagger"};
 int position [2] = {0,0};
 int size_cmds;
+int size_inventar;
 int cmd_no;
 int i;
 
@@ -45,6 +47,7 @@ int main()
     cout << endl << "----------------------------" << endl;
 
 size_cmds = sizeof(cmds)/sizeof(cmds[0]);
+size_inventar = sizeof(inventar)/sizeof(inventar[0]);
 
 while (1 < 2) {
 
@@ -88,7 +91,14 @@ case 4:
 case 5:
     exit_end();
     break;
+
+case 6:
+     std::cout << "\n";
+  for (i=0; i < size_inventar; i++){
+        std::cout << inventar[i] << "\n";
+        }
+        std::cout << "\n";
+        break;
     }
 }
-
 }
